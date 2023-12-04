@@ -2,15 +2,6 @@
 
 - name: yum-clean-all
   command: yum clean all
-  
-- name: Install MariaDB package
-  yum: name={{ item }} state=installed
-  with_items:
-   - mariadb-server
-   - MySQL-python
-
-- name: Start MariaDB Service
-  service: name=mariadb state=started enabled=yes
  
 - name: Start firewalld
   service: name=firewalld state=started enabled=yes
